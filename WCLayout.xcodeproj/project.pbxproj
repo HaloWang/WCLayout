@@ -406,6 +406,7 @@
 				0953DAD61B49924000038556 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0953DAD71B49924000038556 /* Build configuration list for PBXNativeTarget "WCLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +415,7 @@
 				0953DAD91B49924000038556 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

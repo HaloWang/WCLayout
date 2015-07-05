@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ObjectiveC
+import ObjectiveC.runtime
 
 ///	屏幕高度
 public var WCScreenHeight : CGFloat {
