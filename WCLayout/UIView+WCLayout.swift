@@ -164,7 +164,7 @@ public extension UIView {
 		println("⚠️WCLayout: You must set superView before use WCLayout!")
 	}
 	
-	var x: CGFloat {
+	private var x: CGFloat {
 		get {
 			return frame.x
 		}
@@ -236,7 +236,7 @@ public extension UIView {
 		return x + width
 	}
 	
-	var y: CGFloat {
+	private var y: CGFloat {
 		get {
 			return frame.y
 		}
