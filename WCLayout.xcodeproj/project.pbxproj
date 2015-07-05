@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0953DAC41B49924000038556 /* WCLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0953DAC31B49924000038556 /* WCLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0953DACA1B49924000038556 /* WCLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0953DABE1B49924000038556 /* WCLayout.framework */; };
 		0953DAD11B49924000038556 /* WCLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953DAD01B49924000038556 /* WCLayoutTests.swift */; };
 		0953DADD1B49924C00038556 /* UIView+WCLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953DADA1B49924C00038556 /* UIView+WCLayout.swift */; };
@@ -26,7 +25,6 @@
 /* Begin PBXFileReference section */
 		0953DABE1B49924000038556 /* WCLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WCLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0953DAC21B49924000038556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0953DAC31B49924000038556 /* WCLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCLayout.h; sourceTree = "<group>"; };
 		0953DAC91B49924000038556 /* WCLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WCLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0953DACF1B49924000038556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0953DAD01B49924000038556 /* WCLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLayoutTests.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 		0953DAC01B49924000038556 /* WCLayout */ = {
 			isa = PBXGroup;
 			children = (
-				0953DAC31B49924000038556 /* WCLayout.h */,
 				0953DADA1B49924C00038556 /* UIView+WCLayout.swift */,
 				0953DAC11B49924000038556 /* Supporting Files */,
 			);
@@ -112,7 +109,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0953DAC41B49924000038556 /* WCLayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

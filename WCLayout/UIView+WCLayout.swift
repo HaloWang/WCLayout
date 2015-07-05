@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ObjectiveC.runtime
 
 ///	屏幕高度
 public var WCScreenHeight : CGFloat {
@@ -73,23 +72,21 @@ public extension CGRect {
 private var X: Int8 = 0
 private var Y: Int8 = 0
 
-private extension UIView {
-	var rulerX: WCLayoutRuler {
+public extension UIView {
+	
+	private var rulerX: WCLayoutRuler {
 		if objc_getAssociatedObject(self, &X) == nil {
 			objc_setAssociatedObject(self, &X, WCLayoutRuler(), objc_AssociationPolicy(OBJC_ASSOCIATION_RETAIN))
 		}
 		return objc_getAssociatedObject(self, &X) as! WCLayoutRuler
 	}
 	
-	var rulerY: WCLayoutRuler {
+	private var rulerY: WCLayoutRuler {
 		if objc_getAssociatedObject(self, &Y) == nil {
 			objc_setAssociatedObject(self, &Y, WCLayoutRuler(), objc_AssociationPolicy(OBJC_ASSOCIATION_RETAIN))
 		}
 		return objc_getAssociatedObject(self, &Y) as! WCLayoutRuler
 	}
-}
-
-public extension UIView {
 	
 	func x(x:CGFloat) -> Self {
 		self.x = x
@@ -154,11 +151,27 @@ public extension UIView {
 		return self
 	}
 	
+	private var hasNoSuperView : Bool {
+		if superview == nil {
+			tellHasNoSuperView()
+			return true
+		} else {
+			return false
+		}
+	}
+	
+	private func tellHasNoSuperView() {
+		println("⚠️WCLayout: You must set superView before use WCLayout!")
+	}
+	
 	var x: CGFloat {
 		get {
 			return frame.x
 		}
 		set {
+			if hasNoSuperView {
+				return
+			}
 			frame.x = newValue
 			rulerX.x = newValue
 			if rulerX.z != nil {
@@ -177,6 +190,9 @@ public extension UIView {
 	}
 	
 	var chainLeft : CGFloat {
+		if hasNoSuperView {
+			return 0
+		}
 		return superview!.width - left
 	}
 	
@@ -185,6 +201,9 @@ public extension UIView {
 			return frame.width
 		}
 		set {
+			if hasNoSuperView {
+				return
+			}
 			frame.width = newValue
 			rulerX.y = newValue
 			if rulerX.z != nil {
@@ -195,9 +214,15 @@ public extension UIView {
 	
 	var right: CGFloat {
 		get {
+			if hasNoSuperView {
+				return 0
+			}
 			return superview!.width - chainRight
 		}
 		set {
+			if hasNoSuperView {
+				return
+			}
 			rulerX.z = newValue
 			if rulerX.x != nil {
 				frame.width = superview!.width - x - rulerX.z!
@@ -216,6 +241,9 @@ public extension UIView {
 			return frame.y
 		}
 		set {
+			if hasNoSuperView {
+				return
+			}
 			frame.y = newValue
 			rulerY.x = newValue
 			if rulerY.z != nil {
@@ -238,6 +266,9 @@ public extension UIView {
 			return frame.height
 		}
 		set {
+			if hasNoSuperView {
+				return
+			}
 			frame.height = newValue
 			rulerY.y = newValue
 			if rulerY.z != nil {
@@ -248,9 +279,15 @@ public extension UIView {
 	
 	var bottom: CGFloat {
 		get {
+			if hasNoSuperView {
+				return 0
+			}
 			return superview!.height - chainBottom
 		}
 		set {
+			if hasNoSuperView {
+				return
+			}
 			rulerY.z = newValue
 			if rulerY.x != nil {
 				frame.height = superview!.height - y - rulerY.z!
@@ -265,6 +302,9 @@ public extension UIView {
 	}
 	
 	var chainTop : CGFloat {
+		if hasNoSuperView {
+			return 0
+		}
 		return superview!.height - y
 	}
 	
@@ -299,12 +339,18 @@ public extension UIView {
 	}
 	
 	func centerVertically() -> Self {
-		self.frame.origin.y = ((superview!.height - height)/2)
+		if hasNoSuperView {
+			return self
+		}
+		y = ((superview!.height - height)/2)
 		return self
 	}
 	
 	func centerHorizontally() -> Self {
-		self.frame.origin.x = ((superview!.width - width)/2)
+		if hasNoSuperView {
+			return self
+		}
+		x = ((superview!.width - width)/2)
 		return self
 	}
 }
