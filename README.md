@@ -39,7 +39,7 @@
 			var frameB = CGRectZero
 			frameB.origin.x = testView_A.frame.origin.x
 			frameB.origin.y = testView_A.frame.origin.y + testView_A.frame.size.height + 25
-			frameB.size.width = UIScreen.mainScreen().bounds.size.width - testView_A.frame.origin.x - (testView_A.superview!.frame.size.width - (testView_A.frame.origin.x + testView_A.frame.size.width))
+			frameB.size.width = UIScreen.mainScreen().bounds.size.width - testView_A.frame.origin.x - (testView_A.superview!.frame.size.width - (testView_A.frame.origin.x + testView_A.frame.size.width)) - 10
 			frameB.size.height = UIScreen.mainScreen().bounds.size.height - frameB.origin.y - 30
 			testView_B.frame = frameB
 		
