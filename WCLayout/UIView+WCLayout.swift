@@ -19,7 +19,9 @@ public var WCScreenWidth : CGFloat {
 }
 
 ///	屏幕 Bounds
-public var WCScreenBounds = UIScreen.mainScreen().bounds
+public var WCScreenBounds : CGRect {
+	return UIScreen.mainScreen().bounds
+}
 
 /// 居中的 frame，可以理解为CGCenterRectMake
 public func CM(#y: CGFloat, #width: CGFloat, #height: CGFloat) -> CGRect {
@@ -361,8 +363,6 @@ private class WCLayoutRuler: NSObject {
 	private var			constraint_Z: WCLayoutConstraint?
 	private weak var	constraint_last: WCLayoutConstraint?
 	private weak var	constraint_early: WCLayoutConstraint?
-	
-	// TODO: 下面这些陈宏福的代码应该怎么优化？
 	
 	/// 第一约束
 	var x: CGFloat? {
