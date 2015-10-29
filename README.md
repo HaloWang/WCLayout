@@ -1,5 +1,14 @@
 # WCLayout
 
+## Update
+
+😅
+很多第三方布局库要写的比我这个好啊，不过我这个好歹也在一个项目中大量使用过。到现在我已经停止维护这个库了。
+
+**这个库就作为一个纪念吧！**
+
+## Usage
+
 假设我们想达到这样的需求：
 
 ![1](https://github.com/HaloWang/WCLayout/blob/master/readme_1.png?raw=true)
